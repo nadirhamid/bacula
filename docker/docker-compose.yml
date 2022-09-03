@@ -34,8 +34,9 @@ services:
       - bacula-dir
       - db
     volumes:
-      - ./etc:/opt/bacula/etc:ro
-      - ./backups:/mnt/backups:ro
+      - ./etc:/opt/bacula/etc:rw
+      #- ./backups:/mnt/backups:rw
+      - ./backups:/tmp:rw
     ports:
       - 9103:9103
 #
