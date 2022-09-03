@@ -3,6 +3,7 @@ version: '3.1'
 services:
 
   db:
+    network_mode: host
     image: fametec/bacula-catalog:11.0.5
     restart: unless-stopped
     environment:
@@ -15,6 +16,7 @@ services:
       - 5432:5432
 #
   bacula-dir:
+    network_mode: host
     image: fametec/bacula-director:11.0.5
     restart: unless-stopped
     volumes:
@@ -25,7 +27,7 @@ services:
       - 9101:9101
 #
   bacula-sd:
-    #network_mode: host
+    network_mode: host
     image: fametec/bacula-storage:11.0.5
     restart: unless-stopped
     depends_on:
@@ -33,22 +35,13 @@ services:
       - db
     volumes:
       - ./etc:/opt/bacula/etc:ro
+      - ./backups:/mnt/backups:ro
     ports:
       - 9103:9103
 #
-  bacula-fd:
-    image: fametec/bacula-client:11.0.5
-    restart: unless-stopped
-    depends_on:
-      - bacula-sd
-      - bacula-dir
-      - db
-    volumes:
-      - ./etc:/opt/bacula/etc:ro
-    ports:
-      - 9102:9102
 #
   baculum-api:
+    network_mode: host
     image: fametec/baculum-api:11.0.5
     restart: unless-stopped
     depends_on: 
@@ -62,6 +55,7 @@ services:
 
 #
   baculum-web:
+    network_mode: host
     image: fametec/baculum-web:11.0.5
     restart: unless-stopped
     depends_on: 
