@@ -25,6 +25,7 @@ services:
       - 9101:9101
 #
   bacula-sd:
+    #network_mode: host
     image: fametec/bacula-storage:11.0.5
     restart: unless-stopped
     depends_on:

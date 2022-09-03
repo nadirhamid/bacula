@@ -1,4 +1,5 @@
 127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
 ::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
-192.168.2.227 backupclient1.local
+1.2.3.4 backupclient1.local
+1.2.3.5 backupclient2.local
 127.0.0.1 backupserver.local
