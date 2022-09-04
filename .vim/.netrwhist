@@ -1,4 +1,8 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =2
+let g:netrw_dirhist_cnt =6
 let g:netrw_dirhist_1='/home/vdsm/docker/etc'
 let g:netrw_dirhist_2='/home/vdsm/docker/bacula-sd'
+let g:netrw_dirhist_3='/home/vdsm/docker'
+let g:netrw_dirhist_4='/home/vdsm/docker/bacula-fd'
+let g:netrw_dirhist_5='/home/vdsm/docker'
+let g:netrw_dirhist_6='/home/vdsm/docker/bacula-base'

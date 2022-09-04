@@ -3,7 +3,7 @@ version: '3.1'
 services:
 
   bacula-fd:
-    #network_mode: host
+    network_mode: host
     image: fametec/bacula-client:11.0.5
     restart: unless-stopped
     volumes:
